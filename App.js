@@ -96,7 +96,7 @@ class Inputs extends Component{
  
 
 
-    var result = (parseFloat(weight))/(parseFloat(convHeight)*parseFloat(convHeight));
+    var result = (parseFloat(convWeight))/(parseFloat(convHeight)*parseFloat(convHeight));
     result = result.toFixed(2);
     this.setState({bmi: result})
   }
