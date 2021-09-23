@@ -71,7 +71,28 @@ class Inputs extends Component{
   }
 
   calculate = (height, weight) => {
-    var result = (parseFloat(weight)*10000)/(parseFloat(height)*parseFloat(height));
+
+    if(this.state.heightValue == 'CMS'){
+      var convHeight = height/100;
+      
+    }else if(this.state.heightValue == 'FT'){
+      var convHeight = height/3.281      
+    }else{
+      alert("Please pick either CMS or FT as your height.");
+    }
+
+    if(this.state.weightValue == 'KG'){
+      var convWeight = weight;
+    }else if(this.state.weightValue == 'LBS'){
+      var convWeight = weight/2.205;
+    }else{
+      alert("Please pick either KG or LBS as your weight.");
+    }
+
+ 
+
+
+    var result = (parseFloat(weight))/(parseFloat(convHeight)*parseFloat(convHeight));
     result = result.toFixed(2);
     this.setState({bmi: result})
   }
