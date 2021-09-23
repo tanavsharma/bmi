@@ -35,14 +35,8 @@ class Inputs extends Component{
   calculate = (height, weight) => {
     var result = (parseFloat(weight)*10000)/(parseFloat(height)*parseFloat(height));
     result = result.toFixed(2);
-
     this.setState({bmi: result})
   }
-
-  
-
-  
-  
 
   render() {
     return (
@@ -51,10 +45,12 @@ class Inputs extends Component{
       <Text style = {styles.title}>BMI Calculator</Text>
 
       <Text style = {styles.label}>Height</Text>
-      <TextInput style = {styles.input}/>
+      <TextInput style = {styles.input}
+          onChangeText = {this.handleHeight}/>
 
       <Text style = {styles.label}>Weight</Text>
-      <TextInput style = {styles.input}/>
+      <TextInput style = {styles.input}
+          onChangeText = {this.handleWeight}/>
 
       <TouchableOpacity
                style = {styles.submitButton}
