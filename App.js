@@ -1,7 +1,11 @@
 /**
- * Sample React Native App
- * https://github.com/facebook/react-native
+ * Name: Tanav Sharma
+ * Date: Sept 23 2021
  *
+ * Description: This app allows ths user to enter their 
+ *              height (either in centimeters or feet) &
+ *              their weight (either in kilograms or pounds)
+ *              and will return their BMI. 
  * @format
  * @flow strict-local
  */
@@ -215,8 +219,5 @@ const styles = StyleSheet.create({
     height: 40,
     borderWidth: 1,
     padding: 10,
-  }
-
-
-
+  } 
 })
