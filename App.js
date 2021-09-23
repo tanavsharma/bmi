@@ -17,7 +17,31 @@ import {
 }from 'react-native'
 
 class Inputs extends Component{
+  state = {
+    height: '',
+    weight: '',
+    bmi: '',
+    bmiResult: '',
+  }
 
+  handleHeight = (text) => {
+    this.setState({height: text})
+  }
+
+  handleWeight = (text) => {
+    this.setState({weight: text})
+  }
+
+  calculate = (height, weight) => {
+    var result = (parseFloat(weight)*10000)/(parseFloat(height)*parseFloat(height));
+    result = result.toFixed(2);
+
+    this.setState({bmi: result})
+  }
+
+  
+
+  
   
 
   render() {
@@ -40,7 +64,8 @@ class Inputs extends Component{
                <Text style = {styles.submitButtonText}> Calculate </Text>
       </TouchableOpacity>
 
-      <Text style = {styles.label}>Your BMI</Text>
+      <Text style = {styles.output}>{this.state.bmi}</Text>
+      <Text style = {styles.resultText}>{this.state.BmiResult}</Text>
       
 
       </View>
@@ -82,6 +107,11 @@ const styles = StyleSheet.create({
     textAlign: "center",
     color:'white',
     fontSize: 18,
+  },
+  output:{
+    textAlign: "center",
+    fontSize: 30,
+
   }
 
 
